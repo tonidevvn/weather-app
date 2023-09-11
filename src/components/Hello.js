@@ -1,6 +1,6 @@
 import React from "react";
 
-function Hello() {
+function HelloMsg() {
   return (
     <h3>
       Hi there, I&#39;m&nbsp;
@@ -12,4 +12,4 @@ function Hello() {
   );
 }
 
-export default Hello;
+export default HelloMsg;
