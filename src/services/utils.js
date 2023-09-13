@@ -132,7 +132,7 @@ export const getAllProducts = async () => {
 export const getWeatherForecast = async (location = "Toronto") => {
   try {
     const resp = await axios.get(
-      `http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
     );
     console.log(
       "🚀 ~ file: utils.js:134 ~ getWeatherForecast ~ resp:",
