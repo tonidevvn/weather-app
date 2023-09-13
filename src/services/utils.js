@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Hashids from "hashids";
 
+const WEATHER_API_KEY = "9f082f1ed759439bbe3170840231109"; // REPLACE BY YOUR API KEY
+const IP_GEOLOCATION_API_KEY = "aac48ed3b6434b3d905be0fcaa0d0707"; // REPLACE BY YOUR API KEY
+
 const hashids = new Hashids("", 4);
 
 export const hashEncode = (input) => {
@@ -122,6 +125,35 @@ export const getAllProducts = async () => {
     return resp.data;
   } catch (error) {
     console.log("🚀 ~ file: index.js:8 ~ getAllProducts ~ error:", error);
+    return [];
+  }
+};
+
+export const getWeatherForecast = async (location = "Toronto") => {
+  try {
+    const resp = await axios.get(
+      `http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
+    );
+    console.log(
+      "🚀 ~ file: utils.js:134 ~ getWeatherForecast ~ resp:",
+      resp.data
+    );
+    return resp.data;
+  } catch (error) {
+    console.log("🚀 ~ file: utils.js:137 ~ getWeatherForecast ~ error:", error);
+    return [];
+  }
+};
+
+export const getLocationData = async () => {
+  try {
+    const resp = await axios.get(
+      `https://api.geoapify.com/v1/ipinfo?&apiKey=${IP_GEOLOCATION_API_KEY}`
+    );
+    console.log("🚀 ~ file: utils.js:134 ~ getLocationData ~ resp:", resp.data);
+    return resp.data;
+  } catch (error) {
+    console.log("🚀 ~ file: utils.js:137 ~ getLocationData ~ error:", error);
     return [];
   }
 };

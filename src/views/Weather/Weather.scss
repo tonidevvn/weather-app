@@ -1,0 +1,28 @@
+.weatherConditionText {
+  font-size: 20px;
+  padding: 8px;
+  margin: 8px;
+}
+.summaryTemperature {
+  font-size: 26px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .summaryTemperatureUnit {
+    font-size: 14px;
+  }
+}
+
+.weatherTemperatureRange {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  .summaryTemperatureUnit {
+    font-size: 10px;
+  }
+}
